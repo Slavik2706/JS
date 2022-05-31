@@ -1,23 +1,4 @@
 'use strict';
-/*
-let title = "JS";
-let screens = "Простые, Сложные, Интерактивные";
-let screenPrice = 5;
-let rollback = 10;
-let fullPrice = 10000;
-let adaptive = true;
-
-console.log("Тип данных переменной title: " + typeof title);
-console.log("Тип данных переменной fullPrice: " + typeof fullPrice);
-console.log("Тип данных переменной adaptive: " + typeof adaptive);
-
-console.log("Длина строки из переменной screens: " + screens.length);
-console.log("Стоимость верстки экранов " + screenPrice + " рублей");
-console.log("Стоимость разработки сайта " + fullPrice + " рублей");
-
-console.log(screens.toLowerCase().split(", "));
-console.log("Процент отката посреднику за работу " + fullPrice * (rollback / 100) + " рублей");
-*/
 let title = prompt("Как называется ваш проект?");
 let screens = prompt("Какие типы экранов нужно разработать?");
 let screenPrice = +prompt("Сколько будет стоить данная работа?");
@@ -31,8 +12,18 @@ let rollback = 10.5;
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice - rollback);
 
+console.log("Тип данных переменной title: " + typeof title);
+console.log("Тип данных переменной fullPrice: " + typeof fullPrice);
+console.log("Тип данных переменной adaptive: " + typeof adaptive);
+
+console.log("Длина строки из переменной screens: " + screens.length);
+console.log("Стоимость верстки экранов " + screenPrice + " рублей");
+console.log("Стоимость разработки сайта " + fullPrice + " рублей");
+
+console.log(screens.toLowerCase().split(", "));
+console.log("Процент отката посреднику за работу " + fullPrice * (rollback / 100) + " рублей");
+
 console.log("Итоговая стоимость " + servicePercentPrice + " рублей");
 if (fullPrice >= 30000) console.log("Даем скидку в 10%");
 if (fullPrice >= 15000 && fullPrice < 30000) console.log("Даем скидку в 5%");
 if (fullPrice <= 0) console.log("Что то пошло не так");
-
