@@ -7,23 +7,51 @@ let service1 = prompt("Какой дополнительный тип услуг
 let servicePrice1 = +prompt("Сколько это будет стоить?");
 let service2 = prompt("Какой дополнительный тип услуги нужен?");
 let servicePrice2 = +prompt("Сколько это будет стоить?");
-let rollback = 10.5;
+let rollback = 10;
+let fullPrice;
 
-let fullPrice = screenPrice + servicePrice1 + servicePrice2;
-let servicePercentPrice = Math.ceil(fullPrice - rollback);
+const showTypeOf = function (variable) {
+   console.log(variable, typeof variable);
+}
 
-console.log("Тип данных переменной title: " + typeof title);
-console.log("Тип данных переменной fullPrice: " + typeof fullPrice);
-console.log("Тип данных переменной adaptive: " + typeof adaptive);
+const getRollbackMessage = function (price) {
+   if (price >= 30000) {
+      return "Даем скидку в 10%"
+   } else if (price >= 15000 && price < 30000) {
+      return "Даем скидку в 5%"
+   } else if (price >= 0 && price < 15000) {
+      return "Скидка не предусмотрена"
+   } else {
+      return "Что то пошло не так"
+   }
+}
 
-console.log("Длина строки из переменной screens: " + screens.length);
-console.log("Стоимость верстки экранов " + screenPrice + " рублей");
-console.log("Стоимость разработки сайта " + fullPrice + " рублей");
+let getAllServicePrices = function () {
+   return servicePrice1 + servicePrice2;
+}
 
-console.log(screens.toLowerCase().split(", "));
-console.log("Процент отката посреднику за работу " + fullPrice * (rollback / 100) + " рублей");
+function getFullPrice() {
+   return screenPrice + allServicePrices;
+}
 
+function getTitle() {
+   title = title[0].toUpperCase() + title.substring(1).toLowerCase();
+   title = title.trim();
+}
+
+function getServicePercentPrices() {
+   return fullPrice - fullPrice * (rollback / 100);
+}
+
+showTypeOf(title);
+showTypeOf(screenPrice);
+showTypeOf(adaptive);
+
+console.log(screens);
+
+let allServicePrices = getAllServicePrices();
+fullPrice = getFullPrice();
+getTitle();
+console.log(getRollbackMessage(fullPrice));
+let servicePercentPrice = getServicePercentPrices();
 console.log("Итоговая стоимость " + servicePercentPrice + " рублей");
-if (fullPrice >= 30000) console.log("Даем скидку в 10%");
-if (fullPrice >= 15000 && fullPrice < 30000) console.log("Даем скидку в 5%");
-if (fullPrice <= 0) console.log("Что то пошло не так");
