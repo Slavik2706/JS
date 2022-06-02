@@ -22,7 +22,7 @@ const asking = function () {
    while (!isNumber(screenPrice)) {
       screenPrice = prompt("Сколько будет стоить данная работа?");
    }
-
+   screenPrice = Number(screenPrice);
    adaptive = confirm("Нужен ли адаптив на сайте?");
 }
 
