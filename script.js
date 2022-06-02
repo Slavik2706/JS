@@ -15,12 +15,14 @@ const isNumber = function (num) {
 }
 
 const asking = function () {
-   title = prompt("Как называется ваш проект?");
-   screens = prompt("Какие типы экранов нужно разработать?");
+   title = prompt("Как называется ваш проект?", "rrh");
+   screens = prompt("Какие типы экранов нужно разработать?", "ghh");
    screenPrice = prompt("Сколько будет стоить данная работа?");
+   screenPrice = screenPrice.replace(/\s/g, '');
 
    while (!isNumber(screenPrice)) {
       screenPrice = prompt("Сколько будет стоить данная работа?");
+      screenPrice = screenPrice.replace(/\s/g, '');
    }
    screenPrice = Number(screenPrice);
    adaptive = confirm("Нужен ли адаптив на сайте?");
@@ -28,14 +30,21 @@ const asking = function () {
 
 const getAllServicePrices = function () {
    let sum = 0;
-
+   let price;
    for (let i = 0; i < 2; i++) {
       if (i === 0) {
-         service1 = prompt("Какой дополнительный тип услуги нужен?");
+         service1 = prompt("Какой дополнительный тип услуги нужен?", "hrh");
       } else if (i === 1) {
-         service2 = prompt("Какой дополнительный тип услуги нужен?");
+         service2 = prompt("Какой дополнительный тип услуги нужен?", "hrhr");
       }
-      sum += +prompt("Сколько это будет стоить?")
+      price = prompt("Сколько это будет стоить?")
+      price = price.replace(/\s/g, '')
+
+      while (!isNumber(price)) {
+         price = prompt("Сколько это будет стоить?")
+         price = price.replace(/\s/g, '')
+      }
+      sum += Number(price)
    }
    return sum
 
