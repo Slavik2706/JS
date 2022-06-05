@@ -16,13 +16,16 @@ const appData = {
       appData.screens = prompt("Какие типы экранов нужно разработать?");
       do {
          appData.screenPrice = prompt("Сколько будет стоить данная работа?");
-         if (appData.screenPrice !== null) {
-            appData.screenPrice = appData.screenPrice.replace(/\s/g, '');
-         }
+         console.log(appData.screenPrice);
       } while (!appData.isNumber(appData.screenPrice));
+      appData.screenPrice = appData.screenPrice.replace(/\s/g, '');
+
       appData.adaptive = confirm("Нужен ли адаптив на сайте?");
    },
    isNumber: function (num) {
+      if (num !== null) {
+         num = num.replace(/\s/g, '');
+      }
       return !isNaN(parseFloat(num)) && isFinite(num)
    },
    getAllServicePrices: function () {
