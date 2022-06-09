@@ -14,9 +14,16 @@ console.log(range);
 const rangeValue = document.querySelector('.rollback .range-value')
 console.log(rangeValue);
 const totalInput = document.getElementsByClassName('total-input')
-for (let i = 0; i < totalInput.length; i++) {
-   console.log(totalInput[i]);
-}
+const screenPrice = totalInput[0]
+console.log(screenPrice);
+const quantityScreens = totalInput[1]
+console.log(quantityScreens);
+const allServicePrices = totalInput[2]
+console.log(allServicePrices);
+const fullPrice = totalInput[3]
+console.log(fullPrice);
+const servicePercentPrice = totalInput[4]
+console.log(servicePercentPrice);
 let screen = document.querySelectorAll('.screen')
 console.log(screen);
 
