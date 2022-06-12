@@ -1,31 +1,24 @@
 'use strict';
 const title = document.getElementsByTagName('h1')
-console.log(title);
-const handlerBtn = document.getElementsByClassName('handler_btn')
-console.log(handlerBtn);
 const plusBtn = document.querySelector('.screen-btn')
-console.log(plusBtn);
 const percent = document.querySelectorAll('.other-items.percent')
-console.log(percent);
 const number = document.querySelectorAll('.other-items.number')
-console.log(number);
+
 const range = document.querySelector('.rollback [type = "range"]')
-console.log(range);
 const rangeValue = document.querySelector('.rollback .range-value')
-console.log(rangeValue);
+
+const startBtn = document.getElementsByClassName('handler_btn')[0]
+const resetBtn = document.getElementsByClassName('handler_btn')[1]
+
 const totalInput = document.getElementsByClassName('total-input')
-const screenPrice = totalInput[0]
-console.log(screenPrice);
-const quantityScreens = totalInput[1]
-console.log(quantityScreens);
-const allServicePrices = totalInput[2]
-console.log(allServicePrices);
-const fullPrice = totalInput[3]
-console.log(fullPrice);
-const servicePercentPrice = totalInput[4]
-console.log(servicePercentPrice);
-let screen = document.querySelectorAll('.screen')
-console.log(screen);
+const total = totalInput[0]
+const totalCount = totalInput[1]
+const totalCountOther = totalInput[2]
+const fulltotalCount = totalInput[3]
+const totalCountRollback = totalInput[4]
+
+let screens = document.querySelectorAll('.screen')
+
 
 const appData = {
    title: '',
